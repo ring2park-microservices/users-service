@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>Microservices Demo - Users Server</h1>
+
+<p>The Users Microservice is up and running.</p>
+
+<p>
+    This user should exist: <a href="/users/username/fred">/users/username/fred</a>.<br/>
+    Or all users: <a href="/users">/users</a>.<br/>
+    Look in <code>data.sql</code> to see all users.
+</p>
+
+<h3>Spring Boot URLs</h3>
+<p>Spring Boot provides RESTful URLs for interrogating this application (they return JSON format data):</p>
+
+<ul>
+    <li><a th:href="@{/actuator/beans}">The beans</a></li>
+    <li><a th:href="@{/actuator/env}">The environment</a></li>
+    <li><a th:href="@{/actuator/health}">Application health</a></li>
+    <li><a th:href="@{/actuator/info}">Application info</a></li>
+    <li><a th:href="@{/actuator/metrics}">Application metrics</a></li>
+    <li><a th:href="@{/actuator/logfile}">Request log file</a></li>
+</ul>
+
+<div th:replace="footer :: copy"></div>
+
+</body>
+</html>
